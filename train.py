@@ -187,7 +187,6 @@ def load_data_signed_parallel(args, graph_dirs, pi_edges_dict, tt_pair_dict):
             node_labels_tensor = torch.from_numpy(node_labels).float().to(args.device)
             node_labels_tensor = remap_tensor(node_labels_tensor, data_dir)
 
-            # 每个图的数据都加入 total_data 列表
             total_data.append([data_dir, edge_index_s, pi_edges_signed_tensor, tt_pair_index_tensor,
                                node_features_tensor, node_labels_tensor, tt_dis_tensor, data.rate_b])
 
@@ -409,7 +408,6 @@ def set_seed(seed):
 
 if __name__ == '__main__':
     args = parameter_parser()
-    # 固定所有随机种子及确定性算法
     set_seed(args.seed)
 
     timestamp = datetime.now().strftime("%m%d_%H%M")
@@ -438,7 +436,6 @@ if __name__ == '__main__':
         '[Test] Prob: {:.4f} Func: {:.4f} | PI_AND: {:.4f} AND: {:.4f} NOT: {:.4f} | Avg.Train_time: {:.4f}'.format(
             test_results['prob'], test_results['tt'], test_results['pi_and'], test_results['and'], test_results['not'],
             avg_train_time))
-    # 统计模型参数量
     total_params = sum(p.numel() for p in model.parameters())
     logger.info(f"Total model parameters: {total_params}")
     print(f"Total model parameters: {total_params}")
