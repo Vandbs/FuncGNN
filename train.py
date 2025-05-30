@@ -49,7 +49,7 @@ def get_logger(name, logfile=None):
 
 def parameter_parser():
     parser = argparse.ArgumentParser()
-    parser.add_argument('--dataset', type=str, default='PolarGate_processed')
+    parser.add_argument('--dataset', type=str, default='processed')
     parser.add_argument('--task_type', type=str, default='prob', choices=['prob', 'tt'])
     parser.add_argument('--epochs', type=int, default=500)
     parser.add_argument('--lr', type=float, default=None)  
@@ -80,7 +80,7 @@ def parameter_parser():
         else:
             args.lr = 0.001
 
-    args.data_root_path = Path.home().joinpath('AIGDataset', args.dataset)
+    args.data_root_path = Path.home().joinpath('/AIGDataset', args.dataset) # change to your's
     args.pi_edges_path = args.data_root_path.joinpath('npz', 'pi_edges.npz')
     args.tt_pair_path = args.data_root_path.joinpath('npz', 'labels.npz')
 
