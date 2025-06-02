@@ -20,11 +20,8 @@ pip install -r requirements.txt
 Dataset from: https://github.com/BUPT-GAMMA/PolarGate/releases/download/dataset/PolarGate_processed.zip
 
 ```
-cd ~/
-mkdir AIGDataset
 cd AIGDataset
-wget https://github.com/BUPT-GAMMA/PolarGate/releases/download/dataset/PolarGate_processed.zip
-unzip PolarGate_processed.zip 
+unzip processed.zip 
 ```
 
 ## Training Configuration
