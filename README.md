@@ -53,6 +53,11 @@ python train.py --task tt --device 0 --batch_size 128
 If FuncGNN could help your project, please cite our work:
 
 ```
-
+@article{zhao2025funcgnn,
+  title={FuncGNN: Learning Functional Semantics of Logic Circuits with Graph Neural Networks},
+  author={Zhao, Qiyun},
+  journal={arXiv preprint arXiv:2506.06787},
+  year={2025}
+}
 ```
 
