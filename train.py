@@ -226,7 +226,7 @@ def load_model(args):
     in_dim = args.in_dim
     out_dim = args.out_dim
 
-    model = Ourmodel(args=args, node_num=0, device=args.device, in_dim=in_dim, out_dim=out_dim,
+    model = FuncGNN(args=args, node_num=0, device=args.device, in_dim=in_dim, out_dim=out_dim,
                      layer_num=args.layer_num).to(args.device)
     optimizer = torch.optim.Adam(model.parameters(), lr=args.lr, weight_decay=args.weight_decay)
     return model, optimizer
